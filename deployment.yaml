@@ -1,0 +1,17 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: second-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kub-second-app
+  template:
+    metadata:
+      labels:
+        app: kub-second-app
+    spec:
+      containers:
+        - name: second-node
+          image: this888dockerkde/kub-first-app
